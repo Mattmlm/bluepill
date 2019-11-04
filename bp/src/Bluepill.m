@@ -547,7 +547,7 @@ static void onInterrupt(int ignore) {
                     [BPUtils printInfo:ERROR withString:@"%@", [NSString stringWithFormat:@"Unable to get screenshot file from: %@, error: %@", url.absoluteString, [error localizedDescription]]];
                 } else if (! [isDirectory boolValue]) {
                     // No error and it’s not a directory; do something with the file
-                    if ([url.absoluteString containsString:@"AssertionFailedException"] && [url.pathExtension containsString:@"png"]) {
+                    if ([url.absoluteString containsString:@"test_screenshots"] && [url.pathExtension containsString:@"png"]) {
                         NSString *fileName = [url lastPathComponent];
                         NSString *destinationPath = [NSString stringWithFormat:@"%@/%@", screenshotsTestDirectory, fileName];
                         
