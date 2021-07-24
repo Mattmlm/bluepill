@@ -72,7 +72,7 @@ class TestRun: CustomStringConvertible {
                 "-c", bpConfigURL.path,
                 "--output-dir", outputPath,
                 "--screenshots-directory", outputPath,
-                "--videos-directory", outputPath,
+                "--videos-directory", task.config.recordVideo ? outputPath : "",
             ],
             env: env,
             printOutput: true
