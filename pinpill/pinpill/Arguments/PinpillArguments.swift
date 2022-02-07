@@ -14,6 +14,7 @@ import Foundation
 protocol PinpillArguments: Codable {
     var headless: Bool? { get }
     var recordVideo: Bool? { get }
+    var keepPassingTestVideos: Bool? { get }
     var recordScreenshot: Bool? { get }
     var maxSims: Int? { get }
     var maxRetries: Int? { get }

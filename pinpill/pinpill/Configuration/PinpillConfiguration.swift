@@ -28,6 +28,8 @@ class PinpillConfiguration: Codable {
     let urls: PinpillURLs
     static let kDefaultRecordVideo = true
     let recordVideo: Bool
+    static let kDefaultKeepPassingTestVideos = false
+    let keepPassingTestVideos: Bool
     static let kDefaultRecordScreenshot = true
     let recordScreenshot: Bool
     static let kDefaultTaskTimeoutSeconds = 300
@@ -36,6 +38,7 @@ class PinpillConfiguration: Codable {
     static func fromRawConfig(baseConfig: PinpillArguments?, overrideConfig: PinpillArguments) throws -> PinpillConfiguration {
         let headless = baseConfig?.headless ?? overrideConfig.headless ?? kDefaultHeadless
         let recordVideo = baseConfig?.recordVideo ?? overrideConfig.recordVideo ?? kDefaultRecordVideo
+        let keepPassingTestVideos = baseConfig?.keepPassingTestVideos ?? overrideConfig.keepPassingTestVideos ?? kDefaultKeepPassingTestVideos
         let recordScreenshot = baseConfig?.recordScreenshot ?? overrideConfig.recordScreenshot ?? kDefaultRecordScreenshot
         let maxRetries = overrideConfig.maxRetries ?? baseConfig?.maxRetries ?? kDefaultMaxRetries
         let numTestRuns = overrideConfig.numTestRuns ?? baseConfig?.numTestRuns ?? kDefaultNumTestRuns
@@ -119,6 +122,7 @@ class PinpillConfiguration: Codable {
             environment: environment,
             urls: urls,
             recordVideo: recordVideo,
+            keepPassingTestVideos: keepPassingTestVideos,
             recordScreenshot: recordScreenshot,
             taskTimeoutSeconds: taskTimeoutSeconds
         )
@@ -135,6 +139,7 @@ class PinpillConfiguration: Codable {
         environment: [String: String],
         urls: PinpillURLs,
         recordVideo: Bool,
+        keepPassingTestVideos: Bool,
         recordScreenshot: Bool,
         taskTimeoutSeconds: Int
     ) throws {
@@ -170,6 +175,7 @@ class PinpillConfiguration: Codable {
         self.environment = environment
         self.urls = urls
         self.recordVideo = recordVideo
+        self.keepPassingTestVideos = keepPassingTestVideos
         self.recordScreenshot = recordScreenshot
     }
 }

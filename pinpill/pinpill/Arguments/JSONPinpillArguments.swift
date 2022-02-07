@@ -12,6 +12,8 @@ struct JSONPinpillArguments: PinpillArguments, Codable {
     var headless: Bool?
 
     var recordVideo: Bool?
+    
+    var keepPassingTestVideos: Bool?
 
     var recordScreenshot: Bool?
 

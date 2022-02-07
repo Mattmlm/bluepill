@@ -23,6 +23,9 @@ struct PinpillCLI: ParsableCommand {
 
     @Flag(help: "Disable saving videos of test runs.")
     var noRecordVideo: Bool = false
+    
+    @Flag(help: "Keep videos for tests that passed. The default is to remove videos for any passing tests.")
+    var keepPassingTestVideos: Bool = false
 
     @Flag(help: "Disable saving screenshots of failed UI tests.")
     var noRecordScreenshot: Bool = false

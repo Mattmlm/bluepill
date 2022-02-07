@@ -12,6 +12,8 @@ struct CLIPinpillArguments: PinpillArguments {
     var headless: Bool?
 
     var recordVideo: Bool?
+    
+    var keepPassingTestVideos: Bool?
 
     var recordScreenshot: Bool?
 
@@ -46,6 +48,7 @@ struct CLIPinpillArguments: PinpillArguments {
     init(command: PinpillCLI) {
         headless = command.headless ? true : nil
         recordVideo = command.noRecordVideo ? false : nil
+        keepPassingTestVideos = command.keepPassingTestVideos ? true : nil
         recordScreenshot = command.noRecordScreenshot ? false : nil
         maxSims = command.maxSims
         maxRetries = command.maxRetries

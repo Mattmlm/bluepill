@@ -60,6 +60,7 @@ class TestTask {
         // should be part of the same bundle.
         let bpConfig: [String: Any?] = [
             "headless": config.headless,
+            "keep-passing-videos": config.keepPassingTestVideos,
             "app": xcTest.appBundleURL.path,
             "test-bundle-path": xcTest.testBundleURL.path,
             "runner-app-path": xcTest.testRunnerAppURL?.path,
